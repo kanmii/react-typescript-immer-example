@@ -1,0 +1,92 @@
+{
+  "name": "elixir-react-spa-docker",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nps",
+    "eject": "react-scripts eject",
+    "build": "NODE_ENV=production TSC_COMPILE_ON_ERROR=true yarn react-scripts build"
+  },
+  "dependencies": {
+    "@types/classnames": "^2.2.10",
+    "@types/lodash": "^4.14.155",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "bulma": "^0.8.2",
+    "classnames": "^2.2.6",
+    "env-cmd": "^10.1.0",
+    "immer": "^6.0.3",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.14.0",
+    "nps": "^5.9.12",
+    "react": "^16.13.1",
+    "react-app-rewire-hot-loader": "^2.0.1",
+    "react-app-rewired": "^2.1.5",
+    "react-dom": "npm:@hot-loader/react-dom",
+    "react-hot-loader": "^4.12.20",
+    "react-scripts": "3.4.1",
+    "uuidv4": "^6.1.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^9.3.2",
+    "@types/jest": "^24.0.0",
+    "prettier": "^2.0.5",
+    "serve": "^11.3.0",
+    "typescript": "~3.7.2"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "overrides": [
+      {
+        "files": [
+          "cypress/**/*.ts"
+        ],
+        "rules": {
+          "jest/expect-expect": "off",
+          "jest/valid-expect-in-promise": "off",
+          "jest/valid-expect": "off"
+        }
+      },
+      {
+        "files": [
+          "**/*.tsx"
+        ],
+        "rules": {
+          "react/prop-types": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "resolutions": {
+    "graphql": "14.5.8"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.ts*",
+      "!src/__tests__/**",
+      "!src/graphql/**",
+      "!src/register-service-worker.*",
+      "!src/react-app-env.d.ts"
+    ],
+    "watchPathIgnorePatterns": [
+      "<rootDir>/node_modules*",
+      "<rootDir>/package.json",
+      "<rootDir>/build/",
+      "<rootDir>/coverage/",
+      "<rootDir>/public/",
+      "<rootDir>/.netlify/"
+    ]
+  }
+}

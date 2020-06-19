@@ -1,0 +1,39 @@
+@import "../../styles/extensions";
+
+.todo-component {
+  display: flex;
+  flex-direction: column;
+
+  .form {
+    max-width: 310px;
+
+    &__label {
+      padding-left: 10px;
+    }
+
+    &__submit {
+      text-align: center;
+
+      + .form__submit {
+        margin-top: 20px;
+      }
+    }
+
+    &__field--errors {
+      @extend %form-field-errors;
+    }
+
+    &__control-wrapper {
+      flex: 1;
+    }
+  }
+
+  .other-auth {
+    margin-top: 80px;
+    text-align: center;
+  }
+
+  .other-auth__other-link {
+    font-weight: 800;
+  }
+}
